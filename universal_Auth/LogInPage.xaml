@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="universal_Auth.LogInPage"
+             Title="LogInPage"
+             BackgroundColor="GhostWhite"
+             >
+    <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Spacing="20">
+
+        <Label Text="Please log in to continue" FontSize="20" TextColor="Black" HorizontalOptions="Start" VerticalOptions="StartAndExpand" FontFamily="Open Sans" />
+        <!-- Username input box -->
+        <Entry Placeholder="Username" HorizontalOptions="FillAndExpand" HeightRequest="60" WidthRequest="200" FontSize="18" BackgroundColor="LightGrey" TextColor="Black" PlaceholderColor="Black" />
+
+        <!-- Password input box -->
+        <Entry Placeholder="Password" IsPassword="True" HorizontalOptions="FillAndExpand" HeightRequest="60" WidthRequest="200" FontSize="18" BackgroundColor="LightGrey" TextColor="Black" PlaceholderColor="Black" />
+
+        <!-- Log-In Button -->
+        <Button Text="Log In" Clicked="Login_Click" HorizontalOptions="FillAndExpand" HeightRequest="50" FontSize="20" WidthRequest="100" BackgroundColor="DarkSeaGreen" TextColor="White" />
+
+        <!-- Register Button -->
+        <Button Text="Register" Clicked="Register_Click" HorizontalOptions="FillAndExpand" HeightRequest="20" FontSize="10" WidthRequest="70" BackgroundColor="#FF5722" TextColor="White" />
+
+    </StackLayout>
+
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior Command="{Binding BackCommand}"
+                            TextOverride="" />   
+    </Shell.BackButtonBehavior>
+</ContentPage>

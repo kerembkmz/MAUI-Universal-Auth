@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="universal_Auth.SignUpPage"
+             Title="SignUpPage"
+             BackgroundColor="GhostWhite"
+             >
+     <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Spacing="20">
+
+        <Label Text="Sign Up" FontSize="26" TextColor="Black" HorizontalOptions="Start" VerticalOptions="Start" FontFamily="Open Sans" />
+
+        <!-- Name input box -->
+        <Entry Placeholder="Name" HorizontalOptions="FillAndExpand" HeightRequest="40" WidthRequest="200" FontSize="12" BackgroundColor="LightGrey" TextColor="Black" PlaceholderColor="Black" />
+
+        <!-- Surname input box -->
+        <Entry Placeholder="Surname" HorizontalOptions="FillAndExpand" HeightRequest="40" WidthRequest="200" FontSize="12" BackgroundColor="LightGrey" TextColor="Black" PlaceholderColor="Black" />
+
+        <!-- Email input box -->
+        <Entry Placeholder="Email" HorizontalOptions="FillAndExpand" HeightRequest="40" WidthRequest="200" FontSize="12" BackgroundColor="LightGrey" TextColor="Black" PlaceholderColor="Black" />
+
+        <!-- Username input box -->
+        <Entry Placeholder="Username" HorizontalOptions="FillAndExpand" HeightRequest="40" WidthRequest="200" FontSize="12" BackgroundColor="LightGrey" TextColor="Black" PlaceholderColor="Black" />
+
+        <!-- Password input box -->
+        <Entry Placeholder="Password" IsPassword="True" HorizontalOptions="FillAndExpand" HeightRequest="40" WidthRequest="200" FontSize="12" BackgroundColor="LightGrey" TextColor="Black" PlaceholderColor="Black" />
+
+        <!-- Age input box -->
+
+        <StackLayout Orientation="Horizontal" Spacing="0" VerticalOptions="StartAndExpand">
+        <Label Text="Date of birth:" FontSize="12" TextColor="Black" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+        <DatePicker HorizontalOptions="FillAndExpand" HeightRequest="40" WidthRequest="100" FontSize="18" BackgroundColor="LightGrey" TextColor="Black" />
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal" Spacing="2" VerticalOptions="StartAndExpand">
+        <CheckBox Color="Black" />
+        <Label Text="I have read the rules and I accept them" FontSize="12" TextColor="Black" VerticalOptions="Center" />
+        </StackLayout>
+
+    
+    
+
+        <!-- Sign-Up Button -->
+        <Button Text="Sign Up" Clicked="SignUp_Click" HorizontalOptions="FillAndExpand" HeightRequest="50" FontSize="20" WidthRequest="150" BackgroundColor="DarkSeaGreen" TextColor="White" />
+
+    </StackLayout>
+
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior Command="{Binding BackCommand}"
+                            TextOverride="" />   
+    </Shell.BackButtonBehavior>
+</ContentPage>
