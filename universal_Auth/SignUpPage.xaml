@@ -10,26 +10,27 @@
         <Label Text="Sign Up" FontSize="26" TextColor="Black" HorizontalOptions="Start" VerticalOptions="Start" FontFamily="Open Sans" />
 
         <!-- Name input box -->
-        <Entry Placeholder="Name" HorizontalOptions="FillAndExpand" HeightRequest="40" WidthRequest="200" FontSize="12" BackgroundColor="LightGrey" TextColor="Black" PlaceholderColor="Black" />
+        <Entry x:Name="nameEntry" Placeholder="Name" HorizontalOptions="FillAndExpand" HeightRequest="40" WidthRequest="200" FontSize="12" BackgroundColor="LightGrey" TextColor="Black" PlaceholderColor="Black" />
 
         <!-- Surname input box -->
-        <Entry Placeholder="Surname" HorizontalOptions="FillAndExpand" HeightRequest="40" WidthRequest="200" FontSize="12" BackgroundColor="LightGrey" TextColor="Black" PlaceholderColor="Black" />
+        <Entry x:Name="surnameEntry" Placeholder="Surname" HorizontalOptions="FillAndExpand" HeightRequest="40" WidthRequest="200" FontSize="12" BackgroundColor="LightGrey" TextColor="Black" PlaceholderColor="Black" />
 
         <!-- Email input box -->
-        <Entry Placeholder="Email" HorizontalOptions="FillAndExpand" HeightRequest="40" WidthRequest="200" FontSize="12" BackgroundColor="LightGrey" TextColor="Black" PlaceholderColor="Black" />
+        <Entry x:Name="emailEntry" Placeholder="Email" HorizontalOptions="FillAndExpand" HeightRequest="40" WidthRequest="200" FontSize="12" BackgroundColor="LightGrey" TextColor="Black" PlaceholderColor="Black" />
 
         <!-- Username input box -->
-        <Entry Placeholder="Username" HorizontalOptions="FillAndExpand" HeightRequest="40" WidthRequest="200" FontSize="12" BackgroundColor="LightGrey" TextColor="Black" PlaceholderColor="Black" />
+        <Entry x:Name="usernameEntry" Placeholder="Username" HorizontalOptions="FillAndExpand" HeightRequest="40" WidthRequest="200" FontSize="12" BackgroundColor="LightGrey" TextColor="Black" PlaceholderColor="Black" />
 
         <!-- Password input box -->
-        <Entry Placeholder="Password" IsPassword="True" HorizontalOptions="FillAndExpand" HeightRequest="40" WidthRequest="200" FontSize="12" BackgroundColor="LightGrey" TextColor="Black" PlaceholderColor="Black" />
+        <Entry x:Name="passwordEntry" Placeholder="Password" IsPassword="True" HorizontalOptions="FillAndExpand" HeightRequest="40" WidthRequest="200" FontSize="12" BackgroundColor="LightGrey" TextColor="Black" PlaceholderColor="Black" />
 
         <!-- Age input box -->
 
         <StackLayout Orientation="Horizontal" Spacing="0" VerticalOptions="StartAndExpand">
-        <Label Text="Date of birth:" FontSize="12" TextColor="Black" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
-        <DatePicker HorizontalOptions="FillAndExpand" HeightRequest="40" WidthRequest="100" FontSize="18" BackgroundColor="LightGrey" TextColor="Black" />
-        </StackLayout>
+    <Label Text="Age:" FontSize="12" TextColor="Black" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+    <Entry x:Name="ageEntry" Placeholder="Enter your age" Keyboard="Numeric" HorizontalOptions="FillAndExpand" HeightRequest="40" WidthRequest="100" FontSize="18" BackgroundColor="LightGrey" TextColor="Black" />
+</StackLayout>
+
 
         <StackLayout Orientation="Horizontal" Spacing="2" VerticalOptions="StartAndExpand">
         <CheckBox Color="Black" />

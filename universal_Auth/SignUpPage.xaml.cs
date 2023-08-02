@@ -1,7 +1,15 @@
 ﻿namespace universal_Auth;
 
+using System.Xml;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Graphics;
+using password_Manager;
+
 public partial class SignUpPage : ContentPage
 {
+    DateTime selectedDate;
+
+
     public SignUpPage()
     {
         InitializeComponent();
@@ -15,6 +23,28 @@ public partial class SignUpPage : ContentPage
     private void SignUp_Click(object sender, EventArgs e)
     {
 
+        
+        string name = nameEntry.Text;
+        string surname = surnameEntry.Text;
+        string email = emailEntry.Text;
+        string username = usernameEntry.Text;
+        string password = passwordEntry.Text;
+        int age =  18;
 
+
+        databaseService dbService = new databaseService();
+        bool additionValid = dbService.RegisterUser(name, surname, email, username, password, age);
+
+        if (additionValid)
+        {
+            DisplayAlert("Success", "User successfully added.", "OK");
+        }
+        else
+        {
+            DisplayAlert("Error", "Failed to add user. Please try again.", "OK");
+        }
     }
+    
+
+
 }

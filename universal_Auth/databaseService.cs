@@ -1,36 +1,37 @@
 ﻿using System;
-using MySql.Data.MySqlClient; //For connecting to MySql Client.
-using WarNov.CryptAndHash; //For hashing the passwords before storing them.
-
-
+using MySql.Data.MySqlClient;
+using WarNov.CryptAndHash;
 
 namespace password_Manager
 {
-	public class databaseService
-	{
-		private readonly string connectionString;
-		private readonly MySqlConnection cnn;
+    public class databaseService
+    {
+        private readonly string connectionString;
+        private readonly MySqlConnection cnn;
 
-		public databaseService()
-		{
-			connectionString = "Server=127.0.0.1;Database=AUTH_temp;Uid" + allKeys.getDBUsername() + ";Pwd=" + allKeys.getDBPassword();
-			cnn = new MySqlConnection(connectionString);
-		}
+        public databaseService()
+        {
+            connectionString = "Server=127.0.0.1;Database=AUTH_template;Uid=" + allKeys.getDBUsername() + ";Pwd=" + allKeys.getDBPassword();
+            cnn = new MySqlConnection(connectionString);
+        }
 
-        public void RegisterUser(string name, string surname, string email, string username, string password, int age)
+        
+        
+
+        public bool RegisterUser(string name, string surname, string email, string username, string password, int age)
         {
             // Generate Salt and RedPepper using WarBCrypt.SecurePwd
             var securedPwdInfo = WarBCrypt.SecurePwd(password, allKeys.getBlackPepper(), allKeys.getWorkForceLevel());
             string hashedPassword = securedPwdInfo.SecuredPwd;
             string salt = securedPwdInfo.Salt;
             string redPepper = securedPwdInfo.RedPepper;
+            bool registerSuccess = false;
 
             string insertUserQuery = "INSERT INTO users (name, surname, email, username, password, age, salt, redPepper) VALUES (@name, @surname, @email, @username, @hashedPassword, @age, @salt, @redPepper)";
 
             try
             {
-                using MySqlConnection cnn = new MySqlConnection(connectionString);
-                cnn.Open();
+                cnn.Open(); // Open the existing connection
 
                 using MySqlCommand cmd = new MySqlCommand(insertUserQuery, cnn);
                 cmd.Parameters.AddWithValue("@name", name);
@@ -47,17 +48,29 @@ namespace password_Manager
                 if (rowsAffected > 0)
                 {
                     Console.WriteLine("Successfully added user");
+                    registerSuccess = true;
+                    return registerSuccess;
                 }
                 else
                 {
                     Console.WriteLine("Failed to add user");
+                    registerSuccess = false;
+                    return registerSuccess;
                 }
             }
             catch (Exception e)
             {
                 Console.WriteLine("Exception: " + e.Message);
+                registerSuccess = false;
+                return registerSuccess;
+
+            }
+            finally
+            {
+                cnn.Close(); // Always close the connection after use to release resources
             }
         }
+
 
 
 
@@ -171,4 +184,5 @@ namespace password_Manager
 
     }
 }
+
 
