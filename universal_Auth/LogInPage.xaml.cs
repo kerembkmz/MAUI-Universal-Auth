@@ -1,4 +1,5 @@
 ﻿namespace universal_Auth;
+using password_Manager;
 
 public partial class LogInPage : ContentPage
 {
@@ -10,6 +11,20 @@ public partial class LogInPage : ContentPage
 
     void Login_Click(System.Object sender, System.EventArgs e)
     {
+        string username = usernameEntry.Text;
+        string password = passwordEntry.Text;
+
+        databaseService dbService = new databaseService();
+        bool validation = dbService.CheckValidationUser(username, password);
+
+        if (validation)
+        {
+            DisplayAlert("Success", "Logging in.", "OK");
+        }
+        else
+        {
+            DisplayAlert("Error", "Failed to log in. Please try again.", "OK");
+        }
     }
 
     void Register_Click(System.Object sender, System.EventArgs e)

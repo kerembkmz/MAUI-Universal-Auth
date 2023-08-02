@@ -9,10 +9,10 @@
 
         <Label Text="Please log in to continue" FontSize="20" TextColor="Black" HorizontalOptions="Start" VerticalOptions="StartAndExpand" FontFamily="Open Sans" />
         <!-- Username input box -->
-        <Entry Placeholder="Username" HorizontalOptions="FillAndExpand" HeightRequest="60" WidthRequest="200" FontSize="18" BackgroundColor="LightGrey" TextColor="Black" PlaceholderColor="Black" />
+        <Entry x:Name= "usernameEntry" Placeholder="Username" HorizontalOptions="FillAndExpand" HeightRequest="60" WidthRequest="200" FontSize="18" BackgroundColor="LightGrey" TextColor="Black" PlaceholderColor="Black" />
 
         <!-- Password input box -->
-        <Entry Placeholder="Password" IsPassword="True" HorizontalOptions="FillAndExpand" HeightRequest="60" WidthRequest="200" FontSize="18" BackgroundColor="LightGrey" TextColor="Black" PlaceholderColor="Black" />
+        <Entry x:Name="passwordEntry" Placeholder="Password" IsPassword="True" HorizontalOptions="FillAndExpand" HeightRequest="60" WidthRequest="200" FontSize="18" BackgroundColor="LightGrey" TextColor="Black" PlaceholderColor="Black" />
 
         <!-- Log-In Button -->
         <Button Text="Log In" Clicked="Login_Click" HorizontalOptions="FillAndExpand" HeightRequest="50" FontSize="20" WidthRequest="100" BackgroundColor="DarkSeaGreen" TextColor="White" />
