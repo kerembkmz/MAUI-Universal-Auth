@@ -29,7 +29,18 @@ public partial class SignUpPage : ContentPage
         string email = emailEntry.Text;
         string username = usernameEntry.Text;
         string password = passwordEntry.Text;
-        int age =  18;
+        int age;
+
+        
+        if (int.TryParse(ageEntry.Text, out int enteredAge))
+        {
+            age = enteredAge;
+        }
+        else
+        {
+            DisplayAlert("Error", "Please enter a valid age.", "OK");
+            return;
+        }
 
 
         databaseService dbService = new databaseService();

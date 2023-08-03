@@ -4,13 +4,14 @@ namespace password_Manager
 	public class allKeys
 	{
 		//DB username and password
-		private static string DBUsername = "root";
-		private static string DBPassword = "Kerem/kerem10";
+		private static string DBUsername = "your mySql username(usually root)";
+		private static string DBPassword = "your mySql password";
 
 		//Hashing keys
-		private static string salt = "hf9820msadg92";
-        private static string blackPepper = "f1nd1ngn3m0";
-        private static int workForceLevel = 11;
+		private static string salt = "salt value of your choice";
+        private static string blackPepper = "pepper value of your choice";
+        private static int workForceLevel = 11; //Can change, higher number means 
+        										//more protection but it will take more time.
 
 
 		//Methods to retrieve the attributes from different files.
